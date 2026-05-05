@@ -10,7 +10,6 @@ public class Principal {
         // Cola para presentación 500mg
         System.out.println("cola de dolex 500mg");
         botiquin.agregar_cola_a_lote(0);
-        botiquin.Agregar_Medicamento_A_Cola_Desde_Contenedor(0, 0, new Medicamento("dolex", "2025-12", 500));
         botiquin.Agregar_Medicamento_A_Cola_Desde_Contenedor(0, 0, new Medicamento("dolex", "2026-01", 500));
         botiquin.Agregar_Medicamento_A_Cola_Desde_Contenedor(0, 0, new Medicamento("dolex", "2026-02", 500));
         System.out.println("///");

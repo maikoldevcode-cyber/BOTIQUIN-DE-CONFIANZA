@@ -8,8 +8,6 @@ public class Contenedor {
         num++;
          
         return num;
-       
-         
 
     }
 
@@ -18,9 +16,11 @@ public class Contenedor {
 
     }
 
-    public void Agregar_Medicamento_A_Cola_Desde_Contenedor(int posicion,int indix,Medicamento nuev){
-        contenedor[posicion].Agregar_Medicamento_A_Cola( nuev,indix);
+    public void Agregar_Medicamento_A_Cola_Desde_Contenedor(int posicion,int indix,Medicamento medicamento_nuevo){
+        contenedor[posicion].Agregar_Medicamento_A_Cola( indix,medicamento_nuevo);
     }
+
+
 
     public void imprimir_contenedor(){
         for(int i = 0; i < num; i++){

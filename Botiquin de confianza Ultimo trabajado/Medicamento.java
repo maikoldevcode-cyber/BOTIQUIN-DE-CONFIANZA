@@ -2,16 +2,28 @@ public class Medicamento {
     private String nombre;
     private String fecha_vencimiento;
     private int miligramos;
-    private Medicamento anterior;
-    private Medicamento siguiente;
+ 
 
     public Medicamento(String nombre, String fecha_vecimiento, int miligramos) {
-        this.anterior = null;
-        this.siguiente = null;
+
         this.nombre = nombre;
         this.miligramos = miligramos;
-        this.fecha_vencimiento = "no es importante aun";
+        this.fecha_vencimiento =fecha_vecimiento;
     }
+
+    
+
+
+
+    @Override
+    public String toString() {
+        return "Medicamento [getNombre()=" + getNombre() + ", getFecha_vecimiento()=" + getFecha_vecimiento()
+                + ", getMiligramos()=" + getMiligramos() + "]";
+    }
+
+
+
+
 
     public String getNombre() {
 
@@ -40,20 +52,5 @@ public class Medicamento {
         this.miligramos = miligramos;
     }
 
-    public Medicamento getAnterior() {
-        return anterior;
-    }
-
-    public void setAnterior(Medicamento anterior) {
-        this.anterior = anterior;
-    }
-
-    public Medicamento getSiguiente() {
-        return siguiente;
-    }
-
-    public void setSiguiente(Medicamento siguiente) {
-        this.siguiente = siguiente;
-    }
 
 }

@@ -15,10 +15,10 @@ public class Lote {
          
     }
 
-    public Medicamento Agregar_Medicamento_A_Cola (Medicamento nuevo,int indixe){
-        lote[indixe].encolar(nuevo);
-        System.out.println("la medicina es "+lote[indixe].getFrente().getNombre());
-        return nuevo;
+    public Medicamento Agregar_Medicamento_A_Cola (int indixe,Medicamento medicamento_nuevo){
+        lote[indixe].encolar(medicamento_nuevo);
+        lote[indixe].imprimir();
+        return medicamento_nuevo;
     }
 
     public void imprimir_listas(){
@@ -28,6 +28,8 @@ public class Lote {
         }
     }
     
-
+public void Eliminar_Medicamento_A_Cola(int indixe){
+        lote[indixe].desencolar();
+}
 
 }

@@ -1,7 +1,7 @@
 public class Cola {
-    private Medicamento frente;
-    private Medicamento final_;
-    // final Lote lote = new Lote();
+    private Nodo frente;
+    private Nodo final_;
+
 
     public Cola() {
         this.frente = null;
@@ -10,15 +10,13 @@ public class Cola {
 
   
 
-    public void encolar(Medicamento nuevo) {
+    public void encolar(Medicamento medicamneto_nuevo) {
+        Nodo nuevo = new Nodo(medicamneto_nuevo);
         if (this.frente == null && this.final_ == null) {
             this.frente = nuevo;
             this.final_ = nuevo;
         } else {
-            while (final_.getSiguiente() != null) {
-                final_ = final_.getSiguiente();
-
-            }
+          
             final_.setSiguiente(nuevo);
             nuevo.setAnterior(final_);
             final_ = nuevo;
@@ -29,8 +27,8 @@ public class Cola {
 
     }
 
-    public Medicamento desencolar (){
-        Medicamento iterador = frente;
+    public Nodo desencolar (){
+        Nodo iterador = frente;
         if (this.frente == null && this.final_ == null) {
             System.out.println("no hay nada que eliminar");
         }else{
@@ -49,13 +47,14 @@ public class Cola {
     }
 
         public void imprimir(){
-            Medicamento iterador = frente;
+            Nodo iterador = frente;
 
             if (iterador == null) {
                 System.out.println("la lista esta vacia");
             }else{
                 while (iterador != null) {
-                    System.out.println(iterador.getNombre()+iterador.getMiligramos());
+                    iterador.Info();
+                    
                     iterador = iterador.getSiguiente();
                     
                 }
@@ -63,19 +62,19 @@ public class Cola {
 
         }
 
-    public Medicamento getFrente() {
+    public Nodo getFrente() {
         return frente;
     }
 
-    public void setFrente(Medicamento frente) {
+    public void setFrente(Nodo frente) {
         this.frente = frente;
     }
 
-    public Medicamento getFinal_() {
+    public Nodo getFinal_() {
         return final_;
     }
 
-    public void setFinal_(Medicamento final_) {
+    public void setFinal_(Nodo final_) {
         this.final_ = final_;
     }
 }
