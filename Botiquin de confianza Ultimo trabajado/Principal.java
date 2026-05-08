@@ -47,7 +47,16 @@ public class Principal {
         // ===== MOSTRAR CONTENIDO DEL BOTIQUÍN =====
         System.out.println("\n========== CONTENIDO DEL BOTIQUÍN ==========\n");
         botiquin.imprimir_contenedor();
-
+        // Prueba para verificar crecer_lote() creando más de 10 colas en el mismo lote
+        System.out.println("\n=== PRUEBA CRECER LOTE: crear 11 colas en el lote 2 ===\n");
+        botiquin.Crear_Nuevo_Lote();
+        for (int i = 0; i < 11; i++) {
+            botiquin.agregar_cola_a_lote(2);
+            botiquin.Agregar_Medicamento_A_Cola_Desde_Contenedor(2, i, new Medicamento("test", "2026-05", 100 + i));
+        }
+        System.out.println("Se crearon 11 colas en el lote 2 y se agregó un medicamento a cada cola.");
+        System.out.println("\n=== CONTENIDO DEL LOTE 2 DESPUÉS DE CRECER ===\n");
+        botiquin.contenedor[2].imprimir_Listas();
 /*
 Contenedor obj = new Contenedor();
 obj.Crear_Nuevo_Lote();

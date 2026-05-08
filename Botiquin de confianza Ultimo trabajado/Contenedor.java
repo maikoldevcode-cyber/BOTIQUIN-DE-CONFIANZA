@@ -1,6 +1,6 @@
 public class Contenedor {
     int num;
-    Lote contenedor[] =  new Lote[20];
+    Lote contenedor[] =  new Lote[50];
 
     public int Crear_Nuevo_Lote(){
         contenedor[num] = new Lote ();
@@ -12,20 +12,17 @@ public class Contenedor {
     }
 
     public void agregar_cola_a_lote(int posicion){
-        contenedor[posicion].Crear_NuevaCola();
-
+        contenedor[posicion].crear_NuevaCola();
     }
 
     public void Agregar_Medicamento_A_Cola_Desde_Contenedor(int posicion,int indix,Medicamento medicamento_nuevo){
-        contenedor[posicion].Agregar_Medicamento_A_Cola( indix,medicamento_nuevo);
+        contenedor[posicion].agregarMedicamentoACola(indix, medicamento_nuevo);
     }
-
-
 
     public void imprimir_contenedor(){
         for(int i = 0; i < num; i++){
             System.out.println("--- Lote " + i + " ---");
-            contenedor[i].imprimir_listas();
+            contenedor[i].imprimir_Listas();
         }
     }
 
