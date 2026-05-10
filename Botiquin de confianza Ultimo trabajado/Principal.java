@@ -1,11 +1,14 @@
 public class Principal {
     public static void main(String[] args) {
+       
 
+    
+     
         // Crear contenedor principal del botiquín
         Contenedor botiquin = new Contenedor();
         
         // ===== LOTE 1: DOLEX (Medicamento Dolex en diferentes presentaciones) =====
-        botiquin.Crear_Nuevo_Lote();
+        botiquin.crear_y_crecer_si_es_necesario();
         System.out.println("///");
         // Cola para presentación 500mg
         System.out.println("cola de dolex 500mg");
@@ -28,7 +31,7 @@ public class Principal {
         // ===== LOTE 2: AMOXICILINA (Medicamento Amoxicilina en diferentes presentaciones) =====
        System.out.println("///");
        System.out.println(" ");
-        botiquin.Crear_Nuevo_Lote();
+        botiquin.crear_y_crecer_si_es_necesario();
         
         // Cola para presentación 500mg
         System.out.println("cola moxicilina 500 miligramos");
@@ -49,7 +52,7 @@ public class Principal {
         botiquin.imprimir_contenedor();
         // Prueba para verificar crecer_lote() creando más de 10 colas en el mismo lote
         System.out.println("\n=== PRUEBA CRECER LOTE: crear 11 colas en el lote 2 ===\n");
-        botiquin.Crear_Nuevo_Lote();
+        botiquin.crear_y_crecer_si_es_necesario();
         for (int i = 0; i < 11; i++) {
             botiquin.agregar_cola_a_lote(2);
             botiquin.Agregar_Medicamento_A_Cola_Desde_Contenedor(2, i, new Medicamento("test", "2026-05", 100 + i));
@@ -57,6 +60,7 @@ public class Principal {
         System.out.println("Se crearon 11 colas en el lote 2 y se agregó un medicamento a cada cola.");
         System.out.println("\n=== CONTENIDO DEL LOTE 2 DESPUÉS DE CRECER ===\n");
         botiquin.contenedor[2].imprimir_Listas();
+        
 /*
 Contenedor obj = new Contenedor();
 obj.Crear_Nuevo_Lote();
