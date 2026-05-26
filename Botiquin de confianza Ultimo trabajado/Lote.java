@@ -11,8 +11,35 @@ public class Lote {
 
     private int capacidad = 10;     // Capacidad inicial del array de colas
     private int tamaño = 0;         // Cantidad de colas actualmente creadas
+    private String nombre;          // Nombre opcional del lote
     private Cola[] lote = new Cola[capacidad];  // Array dinamico de colas
 
+
+    /**
+     * Getter: obtiene el nombre del lote
+     * @return el nombre asignado al lote, o null si no tiene nombre
+     */
+    public String getNombre() {
+        return nombre;
+    }
+
+ 
+    
+
+    public Lote(String nombre) {
+        setNombre(nombre);
+    }
+
+    /**
+     * Setter: asigna un nombre al lote
+     * @param nombre - El nombre del lote
+     */
+    public void setNombre(String nombre) {
+        if (nombre == null || nombre.trim().isEmpty()) {
+            throw new IllegalArgumentException("El nombre del lote no puede estar vacío");
+        }
+        this.nombre = nombre.trim();
+    }
 
     /**
      * Getter: obtiene el numero de colas activas en este lote

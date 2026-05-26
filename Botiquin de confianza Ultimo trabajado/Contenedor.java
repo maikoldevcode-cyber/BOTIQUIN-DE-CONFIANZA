@@ -1,3 +1,4 @@
+import java.util.Scanner;
 /**
  * Clase Contenedor
  * Representa el contenedor principal del botiquin que agrupa todos los Lotes.
@@ -9,6 +10,8 @@
  * Cada Cola contiene medicamentos de la misma dosificacion
  */
 public class Contenedor {
+      Scanner sc  = new Scanner(System.in);
+
     private int capacidad = 1;          // Capacidad inicial del array de lotes
     private int longitud;               // Variable auxiliar para longitud
     private int num;                    // Contador de lotes actualmente creados
@@ -28,7 +31,8 @@ public class Contenedor {
      * @throws IllegalStateException - Si la capacidad es invalida
      */
     public int crecer_contenedor() {
-        if (capacidad <= 0) {
+            
+            if (capacidad <= 0) {
             // IllegalStateException: se lanza cuando el objeto esta en un estado invalido
             throw new IllegalStateException("Capacidad invalida");
         }
@@ -54,8 +58,12 @@ public class Contenedor {
         if (num >= capacidad) {
             throw new IllegalStateException("No hay espacio para crear nuevo lote");
         }
-        contenedor[num] = new Lote();
+        
+        contenedor[num] = new Lote(sc.nextLine());
+
         System.out.println("Se creó un nuevo lote en posición " + num);
+        System.out.println("Su nombre es: " + contenedor[num].getNombre());
+        
         num++;
         setLongitud(num);
         return num - 1;  // Retorna el indice del lote creado
@@ -68,12 +76,12 @@ public class Contenedor {
      * 
      * @return el indice del nuevo lote creado
      */
-    public int crear_y_crecer_si_es_necesario() {
+    public int crear_y_crecer_si_es_necesario(String nombre) {
         if (num == capacidad) {
             System.out.println("El contenedor esta lleno, hagamoslo crecer");
             crecer_contenedor();
         }
-        return Crear_Nuevo_Lote();
+        return Crear_Nuevo_Lote(nombre);
     }
 
     /**
